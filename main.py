@@ -25,7 +25,7 @@ def main():
 
     Нажмите 'q' для выхода из процесса обработки видео.
     """
-    video_cap = cv2.VideoCapture("input/input.mp4")
+    video_cap = cv2.VideoCapture("input/crowd.mp4")
     frame_width = int(video_cap.get(cv2.CAP_PROP_FRAME_WIDTH))
     frame_height = int(video_cap.get(cv2.CAP_PROP_FRAME_HEIGHT))
     fps = int(video_cap.get(cv2.CAP_PROP_FPS))
@@ -49,7 +49,7 @@ def main():
         if not ret:
             break
 
-        detect = next(iter(model.predict(frame, iou=0.5, conf=0.7)))
+        detect = next(iter(model.predict(frame, iou=0.5, conf=0.6)))
 
         bboxes_xyxy = torch.from_numpy(detect.prediction.bboxes_xyxy).tolist()
         confidence = torch.from_numpy(detect.prediction.confidence).tolist()
