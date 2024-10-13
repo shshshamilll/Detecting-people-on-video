@@ -9,7 +9,6 @@
 git clone https://github.com/shshshamilll/Detecting-people-on-video.git
 cd Detecting-people-on-video
 pip install -r requirements.txt
-mkdir output
 ```
 ## Запуск
 ```
