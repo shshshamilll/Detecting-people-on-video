@@ -1,7 +1,6 @@
 import cv2
 
 video_path = 'output/output.mp4'
-
 video = cv2.VideoCapture(video_path)
 
 if not video.isOpened():
